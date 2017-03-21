@@ -1,0 +1,57 @@
+#include "5x5.h"
+
+MENU ID ID_Mnu5x5
+BEGIN
+   PULLDOWN "Game"
+   BEGIN
+      MENUITEM "New..." ID_MnuItmNew "N"
+   END
+
+   PULLDOWN "Help"
+   BEGIN
+      MENUITEM "About 5x5..." ID_MnuItmAbout "A"
+   END
+END
+
+FORM ID_Frm5x5 0 0 160 161 USABLE MODAL MENUID ID_Mnu5x5 HELPID ID_Hlp5x5
+BEGIN
+   TITLE "5x5 v1.01"
+
+   LABEL  "Moves"  ID_LabMoves 0 20 FONT 1
+   LABEL  "On"     ID_LabOn    0 40 FONT 1
+   LABEL  "Off"    ID_LabOff   0 60 FONT 1
+
+   FIELD ID_FldMoves 0 30 30 AUTO UNDERLINED NONEDITABLE
+   FIELD ID_FldOn    0 50 30 AUTO UNDERLINED NONEDITABLE
+   FIELD ID_FldOff   0 70 30 AUTO UNDERLINED NONEDITABLE
+
+   BUTTON "New..." ID_BtnNew CENTER 145 AUTO AUTO
+
+END
+
+ALERT ID_AltAbout INFORMATION
+BEGIN
+   TITLE "About 5x5"
+   MESSAGE "5x5 - By Dave Pearson"
+   BUTTONS "Ok"
+END
+
+ALERT ID_AltNew CONFIRMATION
+BEGIN
+   TITLE "Start new game?"
+   MESSAGE "Are you sure you want to start a new game?"
+   BUTTONS "Yes" "No"
+END
+
+ALERT ID_AltWin INFORMATION
+BEGIN
+   TITLE "Winner!"
+   MESSAGE "Congratulations, you've done it!"
+   BUTTONS "I'm Cool"
+END
+
+STRING ID_Hlp5x5 "Welcome to 5x5!\n\n"\
+                 "The object of the game is to fill all of the squares."\
+                 "When you click on a square, it, and the squares above,"\
+                 "below and to the sides will be toggled.\n\nGood luck!\n\n"\
+                 "davep@hagbard.demon.co.uk\nwww.hagbard.demon.co.uk"
